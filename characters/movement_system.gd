@@ -4,6 +4,15 @@ export var speed : = 300
 export var direction_angle_in_radians : = 0.0
 export var current : = false
 
+const VECTOR_UP = Vector2(0, -1)
+const VECTOR_UP_RIGHT = Vector2(1, -1)
+const VECTOR_RIGHT = Vector2(1, 0)
+const VECTOR_DOWN_RIGHT = Vector2(1, 1)
+const VECTOR_DOWN = Vector2(0, 1)
+const VECTOR_DOWN_LEFT = Vector2(-1, 1)
+const VECTOR_LEFT = Vector2(-1, 0)
+const VECTOR_UP_LEFT = Vector2(-1, -1)
+
 var x_axis : = Vector2(1, 0)
 var is_moving : = false
 
@@ -22,19 +31,43 @@ func _process(delta):
 func movement_process():
 	var moving : = false
 	
+	var direction : = Vector2(0, 0);
+	
 	if(Input.is_action_pressed("move_up")):
+		direction.y -= 1
 		direction_angle_in_radians = 3*PI/2
 		moving = true
 	elif(Input.is_action_pressed("move_down")):
+		direction.y += 1
 		direction_angle_in_radians = PI/2
 		moving = true
 	
 	if(Input.is_action_pressed("move_left")):
-		direction_angle_in_radians = PI
+		direction.x -= 1
 		moving = true
 	elif(Input.is_action_pressed("move_right")):
-		direction_angle_in_radians = 0
+		direction.x += 1
 		moving = true
+	
+	print(direction)
+	
+	match(direction):
+		VECTOR_UP:
+			direction_angle_in_radians = 3*PI/2
+		VECTOR_UP_RIGHT:
+			direction_angle_in_radians = 7*PI/4
+		VECTOR_RIGHT:
+			direction_angle_in_radians = 0
+		VECTOR_DOWN_RIGHT:
+			direction_angle_in_radians = PI/4
+		VECTOR_DOWN:
+			direction_angle_in_radians = PI/2
+		VECTOR_DOWN_LEFT:
+			direction_angle_in_radians = 3*PI/4
+		VECTOR_LEFT:
+			direction_angle_in_radians = PI
+		VECTOR_UP_LEFT:
+			direction_angle_in_radians = 5*PI/4
 	
 	return moving
 

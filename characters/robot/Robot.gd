@@ -27,6 +27,11 @@ func movement_process():
 		moving = true
 		direction_angle_in_radians = saved_direction_angle_in_radians
 	
+	if(current and Input.is_action_pressed("move_left")):
+		$Sprite.flip_h = false
+	elif(current and Input.is_action_pressed("move_right")):
+		$Sprite.flip_h = true
+	
 	return moving
 
 func swap_check():
