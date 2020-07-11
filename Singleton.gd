@@ -22,6 +22,7 @@ func select_character(index : int):
 		node.current = false
 	
 	movement_system_nodes[index].current = true
+	movement_system_nodes[index].get_node("Arrow").display()
 
 func change_animation(animation_player : AnimationPlayer, new_animation : String):
 	if(animation_player.current_animation != new_animation):

@@ -13,6 +13,8 @@ const VECTOR_DOWN_LEFT = Vector2(-1, 1)
 const VECTOR_LEFT = Vector2(-1, 0)
 const VECTOR_UP_LEFT = Vector2(-1, -1)
 
+var direction : = Vector2(0, 0);
+
 var x_axis : = Vector2(1, 0)
 var is_moving : = false
 
@@ -24,22 +26,18 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	is_moving = movement_process()
-	if(is_moving and current): move_and_collide(Vector2(speed*delta, 0).rotated(direction_angle_in_radians))
-	
-	#swap_check()
+	if(is_moving and current): move_and_slide(Vector2(speed, 0).rotated(direction_angle_in_radians))
 
 func movement_process():
 	var moving : = false
 	
-	var direction : = Vector2(0, 0);
+	direction = Vector2(0, 0);
 	
 	if(Input.is_action_pressed("move_up")):
 		direction.y -= 1
-		direction_angle_in_radians = 3*PI/2
 		moving = true
 	elif(Input.is_action_pressed("move_down")):
 		direction.y += 1
-		direction_angle_in_radians = PI/2
 		moving = true
 	
 	if(Input.is_action_pressed("move_left")):
@@ -48,8 +46,6 @@ func movement_process():
 	elif(Input.is_action_pressed("move_right")):
 		direction.x += 1
 		moving = true
-	
-	print(direction)
 	
 	match(direction):
 		VECTOR_UP:
@@ -70,7 +66,3 @@ func movement_process():
 			direction_angle_in_radians = 5*PI/4
 	
 	return moving
-
-func swap_check():
-	if(Input.is_action_just_pressed("swap_characters")):
-		current = not current #This only works for two characters. Should be fine for this project... probably will need refinement.
