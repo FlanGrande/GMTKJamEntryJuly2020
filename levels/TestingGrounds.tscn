@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/robot/Robot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/human/Human.tscn" type="PackedScene" id=2]
+
+[node name="TestingGrounds" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 299 )
+current = true
+
+[node name="Human" parent="." instance=ExtResource( 2 )]
+RobotNodePath = NodePath("../Robot")
+
+[node name="Robot" parent="." instance=ExtResource( 1 )]
+HumanNodePath = NodePath("../Human")
