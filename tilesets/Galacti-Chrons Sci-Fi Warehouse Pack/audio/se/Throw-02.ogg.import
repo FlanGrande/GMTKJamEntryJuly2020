@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Throw-02.ogg-49399272e5d2cc002a737ec33fd4b0cb.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Throw-02.ogg"
+dest_files=[ "res://.import/Throw-02.ogg-49399272e5d2cc002a737ec33fd4b0cb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

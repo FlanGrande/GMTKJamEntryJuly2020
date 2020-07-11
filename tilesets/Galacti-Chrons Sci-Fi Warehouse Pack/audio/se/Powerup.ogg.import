@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Powerup.ogg-14abcf57d065e9d03977703a07ffe68e.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Powerup.ogg"
+dest_files=[ "res://.import/Powerup.ogg-14abcf57d065e9d03977703a07ffe68e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

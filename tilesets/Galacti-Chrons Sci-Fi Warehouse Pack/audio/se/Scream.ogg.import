@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Scream.ogg-142d3324b8e35115bbf0a824c5ef7f4d.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Scream.ogg"
+dest_files=[ "res://.import/Scream.ogg-142d3324b8e35115bbf0a824c5ef7f4d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

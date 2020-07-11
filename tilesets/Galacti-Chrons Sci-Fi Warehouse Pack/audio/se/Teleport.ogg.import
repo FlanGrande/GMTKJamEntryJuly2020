@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Teleport.ogg-2bf7e593dc0d8dbabc8fd920b21b7ac3.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Teleport.ogg"
+dest_files=[ "res://.import/Teleport.ogg-2bf7e593dc0d8dbabc8fd920b21b7ac3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

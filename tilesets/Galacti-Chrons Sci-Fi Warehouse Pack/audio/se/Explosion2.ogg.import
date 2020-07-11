@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Explosion2.ogg-bbf951aa71357015dbfaed55d44ea6a6.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Explosion2.ogg"
+dest_files=[ "res://.import/Explosion2.ogg-bbf951aa71357015dbfaed55d44ea6a6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

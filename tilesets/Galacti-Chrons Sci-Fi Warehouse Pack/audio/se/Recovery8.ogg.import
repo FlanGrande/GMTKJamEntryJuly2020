@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Recovery8.ogg-949aa44f05cf891eed173b021be616df.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Recovery8.ogg"
+dest_files=[ "res://.import/Recovery8.ogg-949aa44f05cf891eed173b021be616df.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

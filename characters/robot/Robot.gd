@@ -8,7 +8,7 @@ var saved_direction_angle_in_radians : = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Singleton.change_animation($AnimationPlayer, "idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

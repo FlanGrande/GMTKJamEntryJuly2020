@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Damage5.ogg-9c27b417a3aa646baefefce1e45d6ec8.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Damage5.ogg"
+dest_files=[ "res://.import/Damage5.ogg-9c27b417a3aa646baefefce1e45d6ec8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cold3.ogg-0ba55a006ebe2ab6604e9966e7ee3955.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Cold3.ogg"
+dest_files=[ "res://.import/Cold3.ogg-0ba55a006ebe2ab6604e9966e7ee3955.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

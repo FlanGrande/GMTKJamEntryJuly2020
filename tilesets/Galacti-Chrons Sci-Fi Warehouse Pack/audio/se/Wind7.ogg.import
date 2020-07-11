@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Wind7.ogg-14d4f8968347ab766bd410903136209e.oggstr"
+
+[deps]
+
+source_file="res://tilesets/Galacti-Chrons Sci-Fi Warehouse Pack/audio/se/Wind7.ogg"
+dest_files=[ "res://.import/Wind7.ogg-14d4f8968347ab766bd410903136209e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
