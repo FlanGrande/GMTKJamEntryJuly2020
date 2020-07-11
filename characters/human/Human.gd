@@ -44,6 +44,11 @@ func _process(delta):
 				Singleton.change_animation($AnimationPlayer, "animation_00")
 	else:
 		Singleton.change_animation($AnimationPlayer, "animation_00")
+	
+	if(is_moving):
+		$AnimationPlayer.playback_speed = 1.6
+	else:
+		$AnimationPlayer.playback_speed = 0.6
 
 func _on_Area2D_area_entered(area):
 	var body = area.get_parent()
