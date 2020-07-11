@@ -1,7 +1,7 @@
 extends "res://characters/movement_system.gd"
 
 export var HumanNodePath : NodePath
-export var control_range : = 300
+export var control_range : = 180
 
 var lock : = false
 var saved_direction_angle_in_radians : = 0.0

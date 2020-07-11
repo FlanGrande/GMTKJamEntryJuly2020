@@ -2,6 +2,8 @@ extends "res://characters/movement_system.gd"
 
 export var RobotNodePath : NodePath
 
+signal win_level
+
 var connected = false
 
 # Called when the node enters the scene tree for the first time.
@@ -42,3 +44,16 @@ func _process(delta):
 				Singleton.change_animation($AnimationPlayer, "animation_00")
 	else:
 		Singleton.change_animation($AnimationPlayer, "animation_00")
+
+func _on_Area2D_area_entered(area):
+	var body = area.get_parent()
+	
+	if(body.is_in_group("win_doors")):
+		Singleton.next_level()
+		emit_signal("win_level")
+
+func _on_Area2D_area_exited(area):
+	var body = area.get_parent()
+	
+	if(body.is_in_group("win_doors")):
+		body.close()

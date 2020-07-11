@@ -2,6 +2,7 @@ extends Node
 
 var movement_system_nodes : = []
 var current_character_index : = 0
+var current_level = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,3 +28,6 @@ func select_character(index : int):
 func change_animation(animation_player : AnimationPlayer, new_animation : String):
 	if(animation_player.current_animation != new_animation):
 		animation_player.play(new_animation)
+
+func next_level():
+	current_level += 1
