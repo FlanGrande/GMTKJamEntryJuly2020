@@ -1,6 +1,8 @@
 extends "res://characters/movement_system.gd"
 
 export var RobotNodePath : NodePath
+export var AudioInsideRange : AudioStream
+export var AudioOutOfRange : AudioStream
 
 signal win_level
 
@@ -12,7 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(position.distance_to(get_node(RobotNodePath).position) >= get_node(RobotNodePath).control_range):
+	if(get_node(RobotNodePath).lock):
 		connected = false
 	else:
 		connected = true
@@ -62,3 +64,22 @@ func _on_Area2D_area_exited(area):
 	
 	if(body.is_in_group("win_doors")):
 		body.close()
+
+func _on_Timer_timeout():
+	Singleton.select_character(0) #Select Human/Alien.
+
+func _on_Area2DControl_range_body_entered(body):
+	if(body.is_in_group("robot")):
+		body.lock = false
+		var current_music_time = $MusicPlayer.get_playback_position()
+		$MusicPlayer.stream = AudioInsideRange
+		$MusicPlayer.play(current_music_time)
+		$Timer.stop()
+
+func _on_Area2DControl_range_body_exited(body):
+	if(body.is_in_group("robot")):
+		body.lock = true
+		var current_music_time = $MusicPlayer.get_playback_position()
+		$MusicPlayer.stream = AudioOutOfRange
+		$MusicPlayer.play(current_music_time)
+		#$Timer.start(0.2)

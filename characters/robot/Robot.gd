@@ -1,7 +1,6 @@
 extends "res://characters/movement_system.gd"
 
 export var HumanNodePath : NodePath
-export var control_range : = 160
 
 var lock : = false
 var saved_direction_angle_in_radians : = 0.0
@@ -12,13 +11,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(position.distance_to(get_node(HumanNodePath).position) >= control_range):
-		lock = true
+	if(lock):
 		retrieve_robot_check()
-	else:
-		lock = false
 	
 	saved_direction_angle_in_radians = direction_angle_in_radians
+	
+	#if(lock):
+	#	Singleton.select_character(0) #Select Human/Alien.
 
 func movement_process():
 	var moving = .movement_process()
@@ -32,7 +31,7 @@ func movement_process():
 		$Led.visible = true
 		$Led2.visible = true
 	
-	if(not lock and current):
+	if(not lock):
 		match(direction):
 			VECTOR_UP:
 				Singleton.change_animation($AnimationPlayer, "animation_02")
@@ -57,7 +56,9 @@ func movement_process():
 
 func retrieve_robot_check():
 	if(Input.is_action_just_pressed("swap_characters")):
-		position = get_node(HumanNodePath).position
+		var spawn_offset : = 32
+		position = get_node(HumanNodePath).position + Vector2(spawn_offset, -spawn_offset)
+		Singleton.select_character(0)
 
 func _on_Area2D_area_entered(area):
 	var node = area.get_parent()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/boton.ogg-45116b4fee57d8f022a29403f3f4939b.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/boton.ogg"
+dest_files=[ "res://.import/boton.ogg-45116b4fee57d8f022a29403f3f4939b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

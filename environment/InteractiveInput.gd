@@ -10,6 +10,7 @@ export(String, "PressureButton") var type = "PressureButton" # Is it a door, a t
 var pressure_button_node = preload("res://environment/Mechanisms/PressureButton.tscn")
 
 var input_instance # Instance that interacts with the output (e.g. a Key instance)
+var is_activated = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,4 +28,5 @@ func initialize():
 			add_child(input_instance)
 
 func use():
+	is_activated = not is_activated
 	emit_signal("use")

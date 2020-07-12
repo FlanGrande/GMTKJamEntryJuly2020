@@ -6,3 +6,6 @@ func _ready():
 
 func display():
 	Singleton.change_animation($AnimationPlayer, "arrow_in")
+
+func stop_display():
+	Singleton.change_animation($AnimationPlayer, "hidden")

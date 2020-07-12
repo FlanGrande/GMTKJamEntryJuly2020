@@ -8,6 +8,7 @@ func _ready():
 	$Sprite.frame = 1 # red
 
 func use():
+	$AudioStreamPlayer2D.play()
 	get_parent().use()
 	var frame = $Sprite.frame
 

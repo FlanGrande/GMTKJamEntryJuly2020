@@ -1,14 +1,10 @@
 extends Camera2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+export var StartingLevel = "level0"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Singleton.change_animation($AnimationPlayer, "level0")
+	Singleton.change_animation($AnimationPlayer, StartingLevel)
 	pass # Replace with function body.
 
 

@@ -19,7 +19,10 @@ func _process(delta):
 		select_character(current_character_index)
 
 func select_character(index : int):
+	current_character_index = index
+	
 	for node in movement_system_nodes:
+		node.get_node("Arrow").stop_display()
 		node.current = false
 	
 	movement_system_nodes[index].current = true

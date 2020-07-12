@@ -45,5 +45,12 @@ func _on_Use():
 	if(is_activated):
 		deactivate()
 	else:
-		activate()
+		var mechanism = get_parent()
+		var open = true
+		
+		for input in mechanism.input_instances:
+			if(not input.is_activated):
+				open = false
+		
+		if(open): activate()
 

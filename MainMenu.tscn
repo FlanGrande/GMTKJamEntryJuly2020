@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 261.0
+margin_bottom = 132.0
+text = "“Sound effects obtained from https://www.zapsplat.com“"
+__meta__ = {
+"_edit_use_anchors_": false
+}
