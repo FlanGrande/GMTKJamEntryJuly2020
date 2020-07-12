@@ -12,7 +12,7 @@
 [ext_resource path="res://characters/human/strip.png" type="Texture" id=100]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 8.0
+radius = 15.5371
 height = 16.0
 
 [sub_resource type="Animation" id=2]
@@ -180,6 +180,7 @@ AudioOutOfRange = ExtResource( 9 )
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
+volume_db = -12.0
 
 [node name="Shadow" type="Sprite" parent="."]
 scale = Vector2( 1.8, 1.8 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/puerta quizas.ogg-dcb2c6e239d01c11643d8f280f7f6eca.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/puerta quizas.ogg"
+dest_files=[ "res://.import/puerta quizas.ogg-dcb2c6e239d01c11643d8f280f7f6eca.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,9 +1,9 @@
-extends Node2D
+extends StaticBody2D
 
 onready var mechanism = get_parent().get_parent()
 onready var mechanism_id = mechanism.ID
 
-var is_open = false
+var is_displayed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,11 +11,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(is_open):
-		$Sprite.frame = 1
+	if(is_displayed):
 		$CollisionShape2D.disabled = true
 	else:
-		$Sprite.frame = 0
 		$CollisionShape2D.disabled = false
 
 func is_opened_by(node):
@@ -23,10 +21,10 @@ func is_opened_by(node):
 		return true
 	return false
 
-func open():
-	is_open = true
-	$AudioStreamPlayer2D.play()
+func display():
+	is_displayed = true
+	Singleton.change_animation($AnimationPlayer, "fade_in")
 
-func close():
-	is_open = false
-	$AudioStreamPlayer2D.play()
+func hide():
+	is_displayed = false
+	Singleton.change_animation($AnimationPlayer, "fade_out")

@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://environment/BrokenFloor.gd" type="Script" id=1]
 [ext_resource path="res://environment/broken_floor.png" type="Texture" id=2]
+[ext_resource path="res://audio/fx/Metal rompe.ogg" type="AudioStream" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 8, 8 )
 
 [node name="BrokenFloor" type="Node2D" groups=[
 "broken_floors",
 ]]
 script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )
@@ -20,11 +24,12 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+shape = SubResource( 12 )
 
 [node name="TimerBreak" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="TimerBreak" to="." method="_on_TimerBreak_timeout"]
