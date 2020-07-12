@@ -3,6 +3,7 @@ extends Node
 var movement_system_nodes : = []
 var current_character_index : = 0
 var current_level = 0
+var current_scene_path = "res://MainMenu.tscn" #"MainMenu" "TestingGrounds" "Ending"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +14,7 @@ func _process(delta):
 	if Input.is_action_just_released("ui_cancel"):
 		get_tree().quit()
 	
-	if(Input.is_action_just_pressed("swap_characters")):
+	if(Input.is_action_just_pressed("swap_characters") and current_scene_path == "res://levels/TestingGrounds.tscn"):
 		current_character_index += 1
 		current_character_index = current_character_index % movement_system_nodes.size()
 		select_character(current_character_index)
@@ -34,3 +35,14 @@ func change_animation(animation_player : AnimationPlayer, new_animation : String
 
 func next_level():
 	current_level += 1
+
+func win_game():
+	current_level = 0
+	change_scene("res://Ending.tscn")
+
+func change_scene(new_scene_path):
+	if(current_scene_path != new_scene_path):
+		current_scene_path = new_scene_path
+		get_tree().change_scene(new_scene_path)
+	else:
+		print("Scene could not be changed")

@@ -56,7 +56,7 @@ func movement_process():
 
 func retrieve_robot_check():
 	if(Input.is_action_just_pressed("swap_characters")):
-		var spawn_offset : = 32
+		var spawn_offset : = 8
 		position = get_node(HumanNodePath).position + Vector2(spawn_offset, -spawn_offset)
 		Singleton.select_character(0)
 
@@ -64,4 +64,7 @@ func _on_Area2D_area_entered(area):
 	var node = area.get_parent()
 	
 	if(node.is_in_group("pressure_buttons")):
+		node.use()
+	
+	if(node.is_in_group("active_lights")):
 		node.use()

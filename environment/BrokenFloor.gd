@@ -34,7 +34,7 @@ func _on_TimerBreak_timeout():
 	var instance = EmptyFloorScene.instance()
 	instance.position = position
 	instance.scale = scale
-	instance.visible = true
+	instance.visible = false
 	
 	print("Human")
 	print(human_on_top)
