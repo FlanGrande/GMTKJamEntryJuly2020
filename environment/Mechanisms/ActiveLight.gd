@@ -22,8 +22,9 @@ func _process(delta):
 func _on_Area2D_area_entered(area):
 	var body = area.get_parent()
 	if(body.is_in_group("robot")):
-		go_crazy = true
 		use()
 
 func use():
-	get_parent().use()
+	if(not go_crazy):
+		go_crazy = true
+		get_parent().use()

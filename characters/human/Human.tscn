@@ -12,7 +12,7 @@
 [ext_resource path="res://characters/human/strip.png" type="Texture" id=100]
 
 [sub_resource type="CircleShape2D" id=9]
-radius = 22.9531
+radius = 19.3181
 
 [sub_resource type="Animation" id=2]
 resource_name = "animation_00"
